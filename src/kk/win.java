@@ -5,7 +5,7 @@ import java.io.IOException;
 
 //Status: +
 
-//КАЛ
+//КАЛ//
 
 public class win extends JFrame {
 	    private static final long serialVersionUID = 1L; // Это для записи в файл
