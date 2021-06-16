@@ -40,7 +40,13 @@ public class inObj  {
 			System.out.println("no + "+ ex.getMessage());
 		}
 
-		student_list.addAll(new_student); // Добавление всех новых в массив
+		// Добавление всех новых студентов в массив
+		if (student_list.addAll(new_student)) { 
+			System.out.println("Добавление в массив - успешно");
+		} else {
+			System.out.println("Добавление в массив - ошибка");
+		}
+
 		// Поток для записи
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("student.txt"))) {
 			oos.writeObject(student_list); // Запись объектов
