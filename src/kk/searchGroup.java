@@ -42,8 +42,12 @@ public class searchGroup extends JPanel{
 		DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
 		tableModel.setColumnIdentifiers(columnsHeader);
 
+		int i = 1;
+
 		// Создание строки с данными о нашем человеке типа Object[]
-		Object[] ab = new String[] {group.name, group.surname, group.znak, fam.rojd.toString()};
+		Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+				stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
+				stud.get(i).ball[4]};
 		tableModel.addRow(ab); // Добавление этой строки на таблицу
 
 		JTable tab = new JTable(tableModel); // Объявление таблицы
