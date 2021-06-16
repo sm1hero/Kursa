@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
 
-//Status: +
 
 public class win extends JFrame {
 	    private static final long serialVersionUID = 1L; // Это для записи в файл
@@ -14,14 +13,17 @@ public class win extends JFrame {
 	        JMenu menu = new JMenu("Главное меню");
 			// Объявление переменных-пунктов меню
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
-	        JMenuItem item2 = new JMenuItem("Найти по фамилии");
+	        JMenuItem item2 = new JMenuItem("Сортировка по группе");
 	        JMenuItem item3 = new JMenuItem("База данных");
+			JMenuItem item4 = new JMenuItem("Поиск по среднему баллу");
+			
 
 			// Добавление пунктов на меню
 	        menu.add(item1); 
 	        menu.add(item2);
 	        menu.add(item3);
-	        
+	        menu.add(item4);
+
             // Первый пункт, который ссылается на функцию добавления нового человека
 	        item1.addActionListener(new ActionListener()
             {
@@ -53,6 +55,20 @@ public class win extends JFrame {
 			});
 
 			// Третий - список всех, кто в базе
+	        item3.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent arg0)  {
+                    try{
+                    	setContentPane(new delStudent());
+                    	validate();
+                    }
+                    catch (IOException e) {System.out.println(e.getMessage());}
+                    }
+                }
+	        );
+
+			// Четвертый - сортировка по баллу
 	        item3.addActionListener(new ActionListener()
             {
                 @Override
