@@ -51,7 +51,4 @@ public class inObj  {
 		}
 	} 
 }
-//Заебало
-//dsfsdf
-//dsfsf
 
