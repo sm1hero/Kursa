@@ -19,15 +19,15 @@ import java.io.*;
 
 public class newStudent extends JPanel{
 
-	String count = "1";
-	int buffer = Integer.parseInt(count);
-
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
 	// Массив для данных
 	public ArrayList <Student> stud = new ArrayList<Student>();
 
 	// Ниже так называемые "мекти", просто текст и поле ввода
+	JLabel idLab = new JLabel("Номер");
+	JTextField idTxt = new JTextField(20); 
+
 	JLabel namLab = new JLabel("Имя");
 	JTextField namTxt = new JTextField(20); 
 
@@ -60,9 +60,8 @@ public class newStudent extends JPanel{
 
 	public newStudent() throws IOException
 	{
-		// Она говорит надо писать это первой строкой, если наш класс 
-		// наследуется от друого
 		super(); 
+
 		// Расположение BoxLayout по оси Y
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		// Объявление панелей
@@ -72,6 +71,8 @@ public class newStudent extends JPanel{
 		p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 		p2.setLayout(new BoxLayout(p2, BoxLayout.X_AXIS));
 		// На первую панель добавляются все метки и поля вводы
+		p1.add(idLab);
+		p1.add(idTxt);
 		p1.add(namLab);
 		p1.add(namTxt);
 		p1.add(famLab);
@@ -97,32 +98,28 @@ public class newStudent extends JPanel{
 
 		// Задание границ от левого верхнего угла точки (200, 200) до точки (500, 500)
 		setBounds(400, 400, 1000, 1000);
-		addButton.addActionListener(new ActionListener()
-		{
+
+		addButton.addActionListener(new ActionListener() {
+
 			public void actionPerformed(ActionEvent arg0) {
+
 				// По кнопке
 				if (check_abitur()) { //Проверка
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
 					// Сначала "создается" человек ab с данными	
-					
-					
-					count = Integer.toString(buffer);
 
-					Student ab = new Student(count, namTxt.getText(), famTxt.getText(), groupTxt.getText(),ball_1Txt.getText(), 
+					Student ab = new Student(idTxt.getText(), namTxt.getText(), famTxt.getText(), groupTxt.getText(),ball_1Txt.getText(), 
 					ball_2Txt.getText(),ball_3Txt.getText(), ball_4Txt.getText(),
 					ball_5Txt.getText());
 
-					buffer++; //Обновляем номер человека на следующего
-
-					
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
 					clearForm(); // После добавления этого человека форма очищает,то что мы ввели
 				} else {
 					JOptionPane.showMessageDialog(p1, "Данные введены неверно");		 
 				}
-			}});
+		}});
 
 		// Запись в файл
 		saveButton.addActionListener(new ActionListener()
@@ -177,8 +174,9 @@ public class newStudent extends JPanel{
 		Matcher matcher6 = pattern.matcher(ball_3Txt.getText());
 		Matcher matcher7 = pattern.matcher(ball_4Txt.getText());
 		Matcher matcher8 = pattern.matcher(ball_5Txt.getText());
+		Matcher matcher9 = pattern.matcher(idTxt.getText());
 
-		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find()){ 
+		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find() || !matcher9.find()){ 
 			return false;
 		}
 		
