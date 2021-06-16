@@ -36,17 +36,15 @@ public class searchGroup extends JPanel{
 		// Создаём шапку для таблицы
 		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Предмет 1", "Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
 
-		/*
 		// Получаем инфу о человеке с выбранной в интерфейсе фамилией
-		Student student = Student.search(stud, group);
-		*/
+		//Student student = Student.search(stud, group);
 
 		DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
 		tableModel.setColumnIdentifiers(columnsHeader);
 
 		// Создание строки с данными о нашем человеке типа Object[]
-		//Object[] ab = new String[] {group.name, group.surname, group.znak, fam.rojd.toString()};
-		//tableModel.addRow(ab); // Добавление этой строки на таблицу
+		Object[] ab = new String[] {group.name, group.surname, group.znak, fam.rojd.toString()};
+		tableModel.addRow(ab); // Добавление этой строки на таблицу
 
 		JTable tab = new JTable(tableModel); // Объявление таблицы
 		Box contents = new Box(BoxLayout.Y_AXIS);

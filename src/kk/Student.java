@@ -12,6 +12,7 @@ public class Student implements Serializable{
 	String surname = "";
 	String name = "";
 	String group = "";
+	
 
 	String[] ball = new String[5];
 
