@@ -36,7 +36,7 @@ public class searchWin extends JDialog{
 		super(Parent,"Введите фамилию для поиска", true); 
 		try {
             // Поток для чтения файла
-            FileInputStream fis = new FileInputStream("fil.txt");
+            FileInputStream fis = new FileInputStream("student.txt");
 
             if (fis.available() > 0) {
                 // Поток для чтения объектов

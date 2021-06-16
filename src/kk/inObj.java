@@ -14,16 +14,14 @@ public class inObj  {
 
 	public inObj(ArrayList <Student> new_stud) throws IOException {
 			ArrayList <Student> stud = new ArrayList<Student>(); // Массив для людей
-			File Students = new File("students.txt"); // Объявление файла fil.txt
-			
+			File Students = new File("students.txt"); // Объявление файла
 		if (!Students.isFile()) { // Если fil это не файл
 			Students.createNewFile();
 		}
 
 		// Чтение имеющихся данных из файла
 		// Открывается поток для чтения и записи
-		try (FileInputStream fis = new FileInputStream("Students.txt");) {
-			
+		try (FileInputStream fis = new FileInputStream("students.txt");) {
 			if (Students.length() > 0) { // Если в файле что-то есть 
 
 				// Открывается поток для чтения объектов

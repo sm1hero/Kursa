@@ -59,7 +59,7 @@ public class ListStudent extends JPanel{
 	// Функция получения данных из файла
 	public ArrayList <Student> getStudent() throws IOException {
 		ArrayList <Student> stud = new ArrayList<Student>(); // Сюда будем класть данные
-		// Открываем поток записи в файл fil.txt
+		// Открываем поток записи в файл
 		try (FileInputStream fis = new FileInputStream("students.txt");) {
 
 			// Открываем поток записи объектов
