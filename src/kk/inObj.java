@@ -12,23 +12,26 @@ import java.util.ArrayList;
 // Класс для записи объектов в файл
 public class inObj  {
 
-	public inObj(ArrayList <Student> new_stud) throws IOException {
-			ArrayList <Student> stud = new ArrayList<Student>(); // Массив для людей
-			File Students = new File("student.txt"); // Объявление файла
-		if (!Students.isFile()) { // Если fil это не файл
-			Students.createNewFile();
+	public inObj (ArrayList <Student> new_student) throws IOException {
+
+		ArrayList <Student> student_list = new ArrayList<Student>(); // Массив для людей
+
+		File file = new File("student.txt"); // Объявление файла
+
+		if (!file.isFile()) { // Если fil это не файл
+			file.createNewFile();
 		}
 
 		// Чтение имеющихся данных из файла
 		// Открывается поток для чтения и записи
 		try (FileInputStream fis = new FileInputStream("student.txt");) {
-			if (Students.length() > 0) { // Если в файле что-то есть 
+			if (file.length() > 0) { // Если в файле что-то есть 
 
 				// Открывается поток для чтения объектов
 				ObjectInputStream ois = new ObjectInputStream(fis);
 
 				// В массив stud считываются объекты
-				stud = (ArrayList <Student>) ois.readObject();
+				student_list = (ArrayList <Student>) ois.readObject();
 
 				// Закрывается поток чтения объектов
 				ois.close();
@@ -37,10 +40,10 @@ public class inObj  {
 			System.out.println("no + "+ ex.getMessage());
 		}
 
-		stud.addAll(new_stud); // Добавление всех новых в массив
+		student_list.addAll(new_student); // Добавление всех новых в массив
 		// Поток для записи
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("student.txt"))) {
-			oos.writeObject(stud); // Запись объектов
+			oos.writeObject(student_list); // Запись объектов
 			oos.flush();
 			oos.close();
 		}
