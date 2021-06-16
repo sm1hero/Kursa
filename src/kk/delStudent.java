@@ -43,7 +43,7 @@ public class delStudent extends JPanel{
 						}
 
 						// После удаления объект переписывается
-						try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("students.txt"))) {
+						try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("student.txt"))) {
 							oos.writeObject(stud); // Запись объекта
 							oos.flush();
 							oos.close();
@@ -64,7 +64,7 @@ public class delStudent extends JPanel{
 		ArrayList <Student> p = new ArrayList<Student>(); // Объявление массива для людей
 
 		// Открывание потока чтения из файла
-		try (FileInputStream fis=new FileInputStream("students.txt");) {
+		try (FileInputStream fis=new FileInputStream("student.txt");) {
 			ObjectInputStream ois = new ObjectInputStream(fis); // Поток чтения объектов
 			p = (ArrayList <Student>) ois.readObject(); 		// Данные считываются в массив как объект
 			ois.close(); 										// Закрывание потока 

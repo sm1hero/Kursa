@@ -24,8 +24,10 @@ public class ListStudent extends JPanel{
 		try {
 			stud = getStudent(); // Получаем данные из базы
 			//Student.groupDate(stud); // Группируем их по дате
+			System.out.println("Получение данных из базы - успешно!");
 		} catch (IOException e) {
-			System.out.println("list "+ e.getMessage()); 
+			System.out.println("list "+ e.getMessage());
+			System.out.println("Получение данных из базы - ошибка!");
 		}
 
 		setLayout(new FlowLayout()); // Расположение FlowLayout
@@ -60,7 +62,7 @@ public class ListStudent extends JPanel{
 	public ArrayList <Student> getStudent() throws IOException {
 		ArrayList <Student> stud = new ArrayList<Student>(); // Сюда будем класть данные
 		// Открываем поток записи в файл
-		try (FileInputStream fis = new FileInputStream("students.txt");) {
+		try (FileInputStream fis = new FileInputStream("student.txt");) {
 
 			// Открываем поток записи объектов
 			ObjectInputStream ois = new ObjectInputStream(fis);

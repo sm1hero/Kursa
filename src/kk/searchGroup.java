@@ -58,7 +58,7 @@ public class searchGroup extends JPanel{
 	public ArrayList <Student> getStudent() throws IOException {
 		ArrayList <Student> stud = new ArrayList<Student>();
 
-		try (FileInputStream fis = new FileInputStream("students.txt");) {
+		try (FileInputStream fis = new FileInputStream("student.txt");) {
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			stud = (ArrayList <Student> ) ois.readObject();
 			ois.close();

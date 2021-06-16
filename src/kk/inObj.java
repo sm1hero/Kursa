@@ -14,14 +14,14 @@ public class inObj  {
 
 	public inObj(ArrayList <Student> new_stud) throws IOException {
 			ArrayList <Student> stud = new ArrayList<Student>(); // Массив для людей
-			File Students = new File("students.txt"); // Объявление файла
+			File Students = new File("student.txt"); // Объявление файла
 		if (!Students.isFile()) { // Если fil это не файл
 			Students.createNewFile();
 		}
 
 		// Чтение имеющихся данных из файла
 		// Открывается поток для чтения и записи
-		try (FileInputStream fis = new FileInputStream("students.txt");) {
+		try (FileInputStream fis = new FileInputStream("student.txt");) {
 			if (Students.length() > 0) { // Если в файле что-то есть 
 
 				// Открывается поток для чтения объектов
@@ -39,7 +39,7 @@ public class inObj  {
 
 		stud.addAll(new_stud); // Добавление всех новых в массив
 		// Поток для записи
-		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("students.txt"))) {
+		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("student.txt"))) {
 			oos.writeObject(stud); // Запись объектов
 			oos.flush();
 			oos.close();
