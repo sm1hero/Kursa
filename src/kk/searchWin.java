@@ -71,6 +71,8 @@ public class searchWin extends JDialog{
                     }
                 });
                 ois.close(); // Закрытие потока чтения объектов
+            } else {
+                System.out.println("Невозможно прочитать из файла!");
             }
        }
         catch (FileNotFoundException ex1) {

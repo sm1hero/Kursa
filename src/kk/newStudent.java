@@ -21,7 +21,7 @@ public class newStudent extends JPanel{
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
 	// Массив для данных
-	public ArrayList <Student> stud=new ArrayList<Student>();
+	public ArrayList <Student> stud = new ArrayList<Student>();
 
 	// Ниже так называемые "мекти", просто текст и поле ввода
 	JLabel namLab = new JLabel("Имя");
@@ -92,7 +92,7 @@ public class newStudent extends JPanel{
 		this.add(p2);
 
 		// Задание границ от левого верхнего угла точки (200, 200) до точки (500, 500)
-		setBounds(200, 200,500,500);
+		setBounds(200, 200,800,800);
 		addButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent arg0) {
@@ -106,6 +106,7 @@ public class newStudent extends JPanel{
 					ball_5Txt.getText());
 
 					stud.add(ab); // Затем его добавляют в массив
+					System.out.println(ab); // Проверяем массив после записи
 					clearForm(); // После добавления этого человека форма очищает,то что мы ввели
 				} else {
 					JOptionPane.showMessageDialog(p1, "Данные введены неверно");		 
