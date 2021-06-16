@@ -99,11 +99,12 @@ public class delStudent extends JPanel{
 
 		for (int i = 0; i < stud.size(); i++) {
 			// Строка с данными о человеке с индексом цикла i
-			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[1],
-				stud.get(i).ball[2], stud.get(i).ball[3], stud.get(i).ball[4],
-				stud.get(i).ball[5]};
+			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+				stud.get(i).ball[1], stud.get(i).ball[2], stud.get(i).ball[3],
+				stud.get(i).ball[4]};
+
 			tableModel.addRow(ab); // Добавление этой строки
-		} 
+		} 	
 
 		Box contents = new Box(BoxLayout.Y_AXIS);
 		contents.add(new JScrollPane(tab));    
