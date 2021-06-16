@@ -69,7 +69,8 @@ public class win extends JFrame {
 	        );
 
 			// Четвертый - сортировка по баллу
-	        item3.addActionListener(new ActionListener()
+			// Пока что просто выкидывает базу данных
+	        item4.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent arg0)  {
