@@ -51,3 +51,6 @@ public class inObj  {
 		}
 	} 
 }
+//Заебало
+//jjj
+
