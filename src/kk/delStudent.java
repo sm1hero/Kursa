@@ -11,14 +11,14 @@ import javax.swing.table.DefaultTableModel;
 
 // Это функции для вывода данных (4 пункт меню)
 
-// Класс delZ наследуется от класса JPanel
+// Класс delStudent наследуется от класса JPanel
 public class delStudent extends JPanel{
 
 	// Объявление массива людей
-	ArrayList <Student> stud=new ArrayList<Student>();	
+	ArrayList <Student> stud = new ArrayList<Student>();	
 
 	DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
-	JTable tab=new JTable(tableModel); // Объявление таблицы
+	JTable tab = new JTable(tableModel); // Объявление таблицы
 
 	public delStudent() throws IOException
 	{
@@ -35,10 +35,10 @@ public class delStudent extends JPanel{
 				public void actionPerformed(ActionEvent arg0) {
 						// По кнопке Delete выбранная строка удаляется
 						int[] selectedRows = tab.getSelectedRows();
-						int k=0;
+						int k = 0;
 
-						for (int i=0;i<selectedRows.length;i++) {
-							stud.remove(selectedRows[i]-k);
+						for (int i = 0; i < selectedRows.length; i++) {
+							stud.remove(selectedRows[i] - k);
 							k++;
 						}
 
@@ -92,14 +92,14 @@ public class delStudent extends JPanel{
 		}
 
 		// "Шапка" таблицы
-		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Предмет 1","Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
+		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Предмет 1","Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
 
 		// Добавление "шапки"
 		tableModel.setColumnIdentifiers(columnsHeader);
 
 		for (int i = 0; i < stud.size(); i++) {
 			// Строка с данными о человеке с индексом цикла i
-			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+			Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1], stud.get(i).ball[2], stud.get(i).ball[3],
 				stud.get(i).ball[4]};
 

@@ -34,7 +34,7 @@ public class searchGroup extends JPanel{
 		setLayout(new FlowLayout());
 		
 		// Создаём шапку для таблицы
-		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Предмет 1", "Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
+		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Предмет 1", "Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
 
 		// Получаем инфу о человеке с выбранной в интерфейсе фамилией
 		//Student student = Student.search(stud, group);
@@ -45,7 +45,7 @@ public class searchGroup extends JPanel{
 		int i = 1;
 
 		// Создание строки с данными о нашем человеке типа Object[]
-		Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+		Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
 				stud.get(i).ball[4]};
 		tableModel.addRow(ab); // Добавление этой строки на таблицу

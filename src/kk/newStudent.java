@@ -18,6 +18,10 @@ import java.io.*;
 //Status: 
 
 public class newStudent extends JPanel{
+
+	String count = "1";
+	int buffer = Integer.parseInt(count);
+
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
 	// Массив для данных
@@ -92,7 +96,7 @@ public class newStudent extends JPanel{
 		this.add(p2);
 
 		// Задание границ от левого верхнего угла точки (200, 200) до точки (500, 500)
-		setBounds(200, 200,800,800);
+		setBounds(400, 400, 1000, 1000);
 		addButton.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent arg0) {
@@ -100,11 +104,18 @@ public class newStudent extends JPanel{
 				if (check_abitur()) { //Проверка
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
-					// Сначала "создается" человек ab с данными
-					Student ab = new Student(namTxt.getText(), famTxt.getText(), groupTxt.getText(),ball_1Txt.getText(), 
+					// Сначала "создается" человек ab с данными	
+					
+					
+					count = Integer.toString(buffer);
+
+					Student ab = new Student(count, namTxt.getText(), famTxt.getText(), groupTxt.getText(),ball_1Txt.getText(), 
 					ball_2Txt.getText(),ball_3Txt.getText(), ball_4Txt.getText(),
 					ball_5Txt.getText());
 
+					buffer++; //Обновляем номер человека на следующего
+
+					
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
 					clearForm(); // После добавления этого человека форма очищает,то что мы ввели

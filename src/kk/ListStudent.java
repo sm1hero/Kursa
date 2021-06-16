@@ -33,7 +33,7 @@ public class ListStudent extends JPanel{
 		setLayout(new FlowLayout()); // Расположение FlowLayout
 
 		// Создание "шапки" таблицы
-		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Предмет 1", "Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
+		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Предмет 1", "Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
 
 		// Объявление модели таблицы
 		DefaultTableModel tableModel = new DefaultTableModel();
@@ -43,7 +43,7 @@ public class ListStudent extends JPanel{
 		for (int i = 0; i < stud.size(); i++)
 		{
 			// Создание строки типа Object[]
-			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+			Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
 				stud.get(i).ball[4]};
 
