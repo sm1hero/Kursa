@@ -10,7 +10,7 @@ import javax.swing.table.DefaultTableModel;
 
 //Status: -+
 
-public class searchGroup extends JPanel{
+public class searchBall extends JPanel{
 
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
@@ -21,7 +21,7 @@ public class searchGroup extends JPanel{
 	// Фукнция вывода инфы о человеке. Она принимает лишь нужную нам фамилию,
 	// которую мы получили в функции searchWin
 	//ПЕРЕПИСАТЬ НА ГРУППУ
-	public searchGroup (String group) throws IOException
+	public searchBall (String group) throws IOException
 	{
 		super();
 

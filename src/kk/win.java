@@ -46,7 +46,7 @@ public class win extends JFrame {
 					try {
 						searchWin dialog = new searchWin(win.this);	
 						dialog.setVisible(true);
-					setContentPane(new searchGroup(dialog.getSearch()));
+					setContentPane(new searchBall(dialog.getSearch()));
 					validate();
 					}
 					catch (IOException e) {}
