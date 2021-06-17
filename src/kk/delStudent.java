@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 
-// Это функции для вывода данных (4 пункт меню)
+// Это функции для вывода данных (3 пункт меню)
 
 // Класс delStudent наследуется от класса JPanel
 public class delStudent extends JPanel{

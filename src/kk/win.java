@@ -13,15 +13,17 @@ public class win extends JFrame {
 	        JMenu menu = new JMenu("Главное меню");
 			// Объявление переменных-пунктов меню
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
-	        JMenuItem item2 = new JMenuItem("Поиск по среднему баллу");
-	        JMenuItem item3 = new JMenuItem("База данных");
+			JMenuItem item2 = new JMenuItem("Список студентов");
+	        JMenuItem item3 = new JMenuItem("Поиск по среднему баллу");
+			JMenuItem item4 = new JMenuItem("Удаление");
+	        
 			
 
 			// Добавление пунктов на меню
 	        menu.add(item1); 
 	        menu.add(item2);
 	        menu.add(item3);
-
+			menu.add(item4);
 
             // Первый пункт, который ссылается на функцию добавления нового человека
 	        item1.addActionListener(new ActionListener()
@@ -38,9 +40,22 @@ public class win extends JFrame {
                     }
                 }
             );
+			// Второй пункт - список студентов	
+			item2.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent arg0)  {
+                    System.out.println ("ActionListener.actionPerformed : open");
+                    try{
+                    	setContentPane(new ListStudent());
+                    	validate();
+                    }
+                    catch (IOException e) {System.out.println(e.getMessage());}
+                    }
+            	});
 			
 			// Второй пункт - функция отображения информации при выборе балла
-	        item2.addActionListener(new ActionListener() {
+	        item3.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {       
 					try {
@@ -53,8 +68,8 @@ public class win extends JFrame {
 				}
 			});
 
-			// Третий - список всех, кто в базе
-	        item3.addActionListener(new ActionListener()
+			// Третий - Удаление
+	        item4.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent arg0)  {
@@ -64,9 +79,9 @@ public class win extends JFrame {
                     }
                     catch (IOException e) {System.out.println(e.getMessage());}
                     }
-                }
-	        );
-	        return menu;
+                });
+	        
+			return menu;
 	    }
 	    
 	    public win() {
