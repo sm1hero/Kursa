@@ -33,8 +33,8 @@ public class newStudent extends JPanel{
 	float e = 0;
 
 	// Ниже так называемые "метки", просто текст и поле ввода
-	JLabel idLab = new JLabel("Номер");
-	JTextField idTxt = new JTextField(20); 
+	//JLabel idLab = new JLabel("Номер");
+	//JTextField idTxt = new JTextField(20); 
 
 	JLabel namLab = new JLabel("Имя");
 	JTextField namTxt = new JTextField(20); 
@@ -81,8 +81,8 @@ public class newStudent extends JPanel{
 		p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 		p2.setLayout(new BoxLayout(p2, BoxLayout.X_AXIS));
 		// На первую панель добавляются все метки и поля вводы
-		p1.add(idLab);
-		p1.add(idTxt);
+		//p1.add(idLab);
+		//p1.add(idTxt);
 		p1.add(namLab);
 		p1.add(namTxt);
 		p1.add(famLab);
@@ -119,6 +119,7 @@ public class newStudent extends JPanel{
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
 					
+					//Подсчёт среднего балла
 					String ball1 = ball_1Txt.getText();
 					a = Float.parseFloat(ball1);
 					String ball2 = ball_2Txt.getText();
@@ -133,7 +134,7 @@ public class newStudent extends JPanel{
 					srBall.setText(Float.toString(srBall1));
 
 					// Сначала "создается" человек ab с данными
-					Student ab = new Student(idTxt.getText(), namTxt.getText(), famTxt.getText(), groupTxt.getText(), 
+					Student ab = new Student(namTxt.getText(), famTxt.getText(), groupTxt.getText(), 
 					ball_1Txt.getText(), ball_2Txt.getText(), ball_3Txt.getText(), 
 					ball_4Txt.getText(), ball_5Txt.getText(), srBall.getText());
 
@@ -198,9 +199,9 @@ public class newStudent extends JPanel{
 		Matcher matcher6 = pattern.matcher(ball_3Txt.getText());
 		Matcher matcher7 = pattern.matcher(ball_4Txt.getText());
 		Matcher matcher8 = pattern.matcher(ball_5Txt.getText());
-		Matcher matcher9 = pattern.matcher(idTxt.getText());
+		//Matcher matcher9 = pattern.matcher(idTxt.getText());
 
-		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find() || !matcher9.find()){ 
+		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find()){ 
 			return false;
 		}
 		

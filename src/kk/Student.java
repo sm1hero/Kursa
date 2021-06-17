@@ -24,13 +24,13 @@ public class Student implements Serializable{
 
 	// ... = new Student(Ivan, Ivanov, Govno-12-23452PKS, 5, 5, 5, 5) - Пример создания экземпляра класса Student
 	//
-	public Student(String id, String name, String surname, String group, String ball_1, String ball_2, String ball_3, String ball_4, String ball_5, String srBall)
+	public Student(String name, String surname, String group, String ball_1, String ball_2, String ball_3, String ball_4, String ball_5, String srBall)
 	{
 		
 		this.surname =  surname;
 		this.name    =  name;
 		this.group   =  group;
-		this.id 	 =  id;
+		//this.id 	 =  id;
 		this.srBall = srBall;
 
 		this.ball[0] = ball_1;
@@ -62,4 +62,8 @@ public class Student implements Serializable{
 		}
 		System.out.println("________________________");
 	}
+
+    public Object getsrBall() {
+        return srBall;
+    }
 }

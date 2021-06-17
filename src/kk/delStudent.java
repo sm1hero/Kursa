@@ -61,18 +61,18 @@ public class delStudent extends JPanel{
 	// Функция получения людей, как и в других файлах
 	public ArrayList <Student> getStudent() throws IOException
 	{
-		ArrayList <Student> p = new ArrayList<Student>(); // Объявление массива для людей
+		ArrayList <Student> students = new ArrayList<Student>(); // Объявление массива для людей
 
 		// Открывание потока чтения из файла
 		try (FileInputStream fis=new FileInputStream("student.txt");) {
 			ObjectInputStream ois = new ObjectInputStream(fis); // Поток чтения объектов
-			p = (ArrayList <Student>) ois.readObject(); 		// Данные считываются в массив как объект
+			students=(ArrayList<Student>) ois.readObject(); 		// Данные считываются в массив как объект
 			ois.close(); 										// Закрывание потока 
 		} catch (ClassNotFoundException ex) {
 			System.out.println("no+ "+ex.getMessage());
 		}
 
-		return p;
+		return students;
 	}
 
 	// Функция показа таблицы
@@ -92,14 +92,14 @@ public class delStudent extends JPanel{
 		}
 
 		// "Шапка" таблицы
-		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Оценка 1","Оценка 2", "Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
+		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Оценка 1","Оценка 2", "Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
 
 		// Добавление "шапки"
 		tableModel.setColumnIdentifiers(columnsHeader);
 
 		for (int i = 0; i < stud.size(); i++) {
 			// Строка с данными о человеке с индексом цикла i
-			Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1], stud.get(i).ball[2], stud.get(i).ball[3],
 				stud.get(i).ball[4], stud.get(i).srBall};
 
