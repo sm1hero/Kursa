@@ -39,7 +39,7 @@ public class win extends JFrame {
                 }
             );
 			
-			// Второй пункт - функция отображения информации при выборе фамилии
+			// Второй пункт - функция отображения информации при выборе балла
 	        item2.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {       
