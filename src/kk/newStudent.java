@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -24,7 +25,14 @@ public class newStudent extends JPanel{
 	// Массив для данных
 	public ArrayList <Student> stud = new ArrayList<Student>();
 
-	// Ниже так называемые "мекти", просто текст и поле ввода
+	float srBall1 = 0;
+	float a = 0;
+	float b = 0;
+	float c = 0;
+	float d = 0;
+	float e = 0;
+
+	// Ниже так называемые "метки", просто текст и поле ввода
 	JLabel idLab = new JLabel("Номер");
 	JTextField idTxt = new JTextField(20); 
 
@@ -37,23 +45,22 @@ public class newStudent extends JPanel{
 	JLabel groupLab = new JLabel("Группа");
 	JTextField groupTxt = new JTextField(20); 
 
-	JLabel ball_1Lab = new JLabel("Предмет 1");
+	JLabel ball_1Lab = new JLabel("Оценка 1");
 	JTextField ball_1Txt = new JTextField(1); 
 
-	JLabel ball_2Lab = new JLabel("Предмет 2");
+	JLabel ball_2Lab = new JLabel("Оценка 2");
 	JTextField ball_2Txt = new JTextField(1); 
 
-	JLabel ball_3Lab = new JLabel("Предмет 3");
+	JLabel ball_3Lab = new JLabel("Оценка 3");
 	JTextField ball_3Txt = new JTextField(1); 
 
-	JLabel ball_4Lab = new JLabel("Предмет 4");
+	JLabel ball_4Lab = new JLabel("Оценка 4");
 	JTextField ball_4Txt = new JTextField(1); 
 
-	JLabel ball_5Lab = new JLabel("Предмет 5");
+	JLabel ball_5Lab = new JLabel("Оценка 5");
 	JTextField ball_5Txt = new JTextField(1); 
 
-	JLabel srBallLab = new JLabel("Предмет 5");
-	JTextField srBallTxt = new JTextField(1); 
+	JTextField srBall = new JTextField(1); 
 
 	// Две кнопки, Add, чтобы добавить введённого человека в оперативную память,
 	// Save - чтобы сохранить данные из оперативной памяти в файл
@@ -92,8 +99,6 @@ public class newStudent extends JPanel{
 		p1.add(ball_4Txt);
 		p1.add(ball_5Lab);
 		p1.add(ball_5Txt);
-		p1.add(srBallLab);
-		p1.add(srBallTxt);
 
 		// На вторую панель - кнопки
 		p2.add(addButton);
@@ -113,10 +118,24 @@ public class newStudent extends JPanel{
 				if (check_abitur()) { //Проверка
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
-					// Сначала "создается" человек ab с данными	
+					
+					String ball1 = ball_1Txt.getText();
+					a = Float.parseFloat(ball1);
+					String ball2 = ball_2Txt.getText();
+					b = Float.parseFloat(ball2);
+					String ball3 = ball_3Txt.getText();
+					c = Float.parseFloat(ball3);
+					String ball4 = ball_4Txt.getText();
+					d = Float.parseFloat(ball4);
+					String ball5 = ball_5Txt.getText();
+					e = Float.parseFloat(ball5);
+					srBall1=(a+b+c+d+e)/5;
+					srBall.setText(Float.toString(srBall1));
+
+					// Сначала "создается" человек ab с данными
 					Student ab = new Student(idTxt.getText(), namTxt.getText(), famTxt.getText(), groupTxt.getText(), 
 					ball_1Txt.getText(), ball_2Txt.getText(), ball_3Txt.getText(), 
-					ball_4Txt.getText(), ball_5Txt.getText());
+					ball_4Txt.getText(), ball_5Txt.getText(), srBall.getText());
 
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
@@ -124,10 +143,7 @@ public class newStudent extends JPanel{
 				} else {
 					JOptionPane.showMessageDialog(p1, "Данные введены неверно");		 
 				}
-		}
-
-			private void toString(JTextField srBallTxt) {
-			}});
+		}});
 
 		// Запись в файл
 		saveButton.addActionListener(new ActionListener()

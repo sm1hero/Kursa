@@ -21,7 +21,7 @@ public class searchBall extends JPanel{
 	// Фукнция вывода инфы о человеке. Она принимает лишь нужную нам фамилию,
 	// которую мы получили в функции searchWin
 	//ПЕРЕПИСАТЬ НА ГРУППУ
-	public searchBall (String group) throws IOException
+	public searchBall (String ball) throws IOException
 	{
 		super();
 
@@ -45,9 +45,7 @@ public class searchBall extends JPanel{
 		int i = 1;
 
 		// Создание строки с данными о нашем человеке типа Object[]
-		Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
-				stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
-				stud.get(i).ball[4]};
+		Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group};
 		tableModel.addRow(ab); // Добавление этой строки на таблицу
 
 		JTable tab = new JTable(tableModel); // Объявление таблицы

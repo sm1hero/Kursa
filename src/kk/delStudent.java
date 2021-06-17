@@ -51,7 +51,7 @@ public class delStudent extends JPanel{
 							System.out.println("no "+ex.getMessage());	
 						}
 
-					showTable(); // Показ таблцы
+					showTable(); // Показ таблицы
 					validate();	
 				}
 			}
@@ -92,7 +92,7 @@ public class delStudent extends JPanel{
 		}
 
 		// "Шапка" таблицы
-		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Предмет 1","Предмет 2", "Предмет 3", "Предмет 4", "Предмет 5"};
+		Object columnsHeader[] = new String[] {"Номер", "Имя", "Фамилия", "Группа", "Оценка 1","Оценка 2", "Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
 
 		// Добавление "шапки"
 		tableModel.setColumnIdentifiers(columnsHeader);
@@ -101,7 +101,7 @@ public class delStudent extends JPanel{
 			// Строка с данными о человеке с индексом цикла i
 			Object[] ab = new String[]{stud.get(i).id, stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1], stud.get(i).ball[2], stud.get(i).ball[3],
-				stud.get(i).ball[4]};
+				stud.get(i).ball[4], stud.get(i).srBall};
 
 			tableModel.addRow(ab); // Добавление этой строки
 		} 	

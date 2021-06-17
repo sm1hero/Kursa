@@ -14,12 +14,8 @@ public class Student implements Serializable{
 	String name    = "";
 	String group   = "";
 	String[] ball = new String[5];
+	String srBall = "";
 
-	public void srBall(String srBall){
-		for (int i=0; i<5; i++){
-			srBall+=Integer.parseInt(ball[i]);
-		}
-	}
 	// Метод Student - конструктор
 	// Они нужны, чтобы в программе ты смог задать переменную класса (можно назвать экземпляр)
 	// Дело в том, что класс это почти тип данных, вроде строки или целого,
@@ -28,13 +24,14 @@ public class Student implements Serializable{
 
 	// ... = new Student(Ivan, Ivanov, Govno-12-23452PKS, 5, 5, 5, 5) - Пример создания экземпляра класса Student
 	//
-	public Student(String id, String name, String surname, String group, String ball_1, String ball_2, String ball_3, String ball_4, String ball_5)
+	public Student(String id, String name, String surname, String group, String ball_1, String ball_2, String ball_3, String ball_4, String ball_5, String srBall)
 	{
 		
 		this.surname =  surname;
 		this.name    =  name;
 		this.group   =  group;
 		this.id 	 =  id;
+		this.srBall = srBall;
 
 		this.ball[0] = ball_1;
 		this.ball[1] = ball_2;
