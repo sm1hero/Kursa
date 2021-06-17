@@ -18,7 +18,7 @@ public class delStudent extends JPanel{
 	ArrayList <Student> stud = new ArrayList<Student>();	
 
 	DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
-	JTable tab = new JTable(tableModel); // Объявление таблицы
+	JTable tab = new JTable(tableModel); 					// Объявление таблицы
 
 	public delStudent() throws IOException
 	{
@@ -65,9 +65,9 @@ public class delStudent extends JPanel{
 
 		// Открывание потока чтения из файла
 		try (FileInputStream fis=new FileInputStream("student.txt");) {
-			ObjectInputStream ois = new ObjectInputStream(fis); // Поток чтения объектов
-			students=(ArrayList<Student>) ois.readObject(); 		// Данные считываются в массив как объект
-			ois.close(); 										// Закрывание потока 
+			ObjectInputStream ois = new ObjectInputStream(fis);  // Поток чтения объектов
+			students=(ArrayList<Student>) ois.readObject(); 	 // Данные считываются в массив как объект
+			ois.close(); 										 // Закрывание потока 
 		} catch (ClassNotFoundException ex) {
 			System.out.println("no+ "+ex.getMessage());
 		}
