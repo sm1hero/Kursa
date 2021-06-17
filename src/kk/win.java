@@ -14,7 +14,7 @@ public class win extends JFrame {
 	        JMenu menu = new JMenu("Главное меню");
 			// Объявление переменных-пунктов меню
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
-	        JMenuItem item2 = new JMenuItem("Найти по фамилии");
+	        JMenuItem item2 = new JMenuItem("Поиск по среднему баллу");
 	        JMenuItem item3 = new JMenuItem("База данных");
 
 			// Добавление пунктов на меню

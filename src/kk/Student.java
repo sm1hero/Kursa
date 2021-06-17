@@ -13,10 +13,13 @@ public class Student implements Serializable{
 	String surname = "";
 	String name    = "";
 	String group   = "";
-	
-
 	String[] ball = new String[5];
 
+	public void srBall(String srBall){
+		for (int i=0; i<5; i++){
+			srBall+=Integer.parseInt(ball[i]);
+		}
+	}
 	// Метод Student - конструктор
 	// Они нужны, чтобы в программе ты смог задать переменную класса (можно назвать экземпляр)
 	// Дело в том, что класс это почти тип данных, вроде строки или целого,
@@ -27,6 +30,7 @@ public class Student implements Serializable{
 	//
 	public Student(String id, String name, String surname, String group, String ball_1, String ball_2, String ball_3, String ball_4, String ball_5)
 	{
+		
 		this.surname =  surname;
 		this.name    =  name;
 		this.group   =  group;
@@ -37,6 +41,7 @@ public class Student implements Serializable{
 		this.ball[2] = ball_3;
 		this.ball[3] = ball_4;
 		this.ball[4] = ball_5;
+		
 	}
 
 	// Эта функция для вывода данных в консоль. Она нужна только на стадии отладки программы.
@@ -50,7 +55,7 @@ public class Student implements Serializable{
 		} else {
 			System.out.println("error!");
 		}
-
+		
 		for (int i = 0; i < 5; i++) {
 			if ((Integer.parseInt(ball[i]) < 2) || (Integer.parseInt(ball[i]) > 5)){
 				System.out.println("error! в оценке" + i);

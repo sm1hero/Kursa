@@ -27,13 +27,13 @@ public class searchWin extends JDialog{
 	public List <Student> stud = new ArrayList <Student> ();
 
     // Объявления массива для фамилий
-	List <String> surname_list = new ArrayList <String> ();
+	List <String> ball_list = new ArrayList <String> ();
 
-	JComboBox select_fam; // Список для фамилий
-	public String surname;
+	JComboBox select_ball; // Список для фамилий
+	public String srBall;
 
 	searchWin(JFrame Parent){
-		super(Parent,"Введите фамилию для поиска", true); 
+		super(Parent,"Введите средний балл для поиска", true); 
 		try {
             // Поток для чтения файла
             FileInputStream fis = new FileInputStream("student.txt");
@@ -48,14 +48,14 @@ public class searchWin extends JDialog{
                 // Цикл для добавления фамилий в массив
                 // Он "проходит" каждого человека и берёт только фамилию
                 for (Student i: stud) {
-                    surname_list.add(i.surname); // Добавление фамилии в массив
+                    ball_list.add(i.group); // Добавление фамилии в массив
                 }
 
                 // Добавление фамилий в список
-                select_fam = new JComboBox(surname_list.toArray());
+                select_ball = new JComboBox(ball_list.toArray());
 
                 // Добавление списка на форму
-                this.add(select_fam);
+                this.add(select_ball);
 
                 // Кнопка для поиска
                 JButton find = new JButton("Найти");
@@ -93,6 +93,6 @@ public class searchWin extends JDialog{
     // Функция получения фамилии из списка JComboBox
 	public String getSearch()
 	{
-		return select_fam.getSelectedItem().toString();
+		return select_ball.getSelectedItem().toString();
 	}
 }

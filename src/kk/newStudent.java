@@ -52,6 +52,9 @@ public class newStudent extends JPanel{
 	JLabel ball_5Lab = new JLabel("Предмет 5");
 	JTextField ball_5Txt = new JTextField(1); 
 
+	JLabel srBallLab = new JLabel("Предмет 5");
+	JTextField srBallTxt = new JTextField(1); 
+
 	// Две кнопки, Add, чтобы добавить введённого человека в оперативную память,
 	// Save - чтобы сохранить данные из оперативной памяти в файл
     JButton addButton  = new JButton("Добавить");
@@ -89,6 +92,9 @@ public class newStudent extends JPanel{
 		p1.add(ball_4Txt);
 		p1.add(ball_5Lab);
 		p1.add(ball_5Txt);
+		p1.add(srBallLab);
+		p1.add(srBallTxt);
+
 		// На вторую панель - кнопки
 		p2.add(addButton);
 		p2.add(saveButton);
@@ -108,10 +114,9 @@ public class newStudent extends JPanel{
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
 					// Сначала "создается" человек ab с данными	
-
-					Student ab = new Student(idTxt.getText(), namTxt.getText(), famTxt.getText(), groupTxt.getText(),ball_1Txt.getText(), 
-					ball_2Txt.getText(),ball_3Txt.getText(), ball_4Txt.getText(),
-					ball_5Txt.getText());
+					Student ab = new Student(idTxt.getText(), namTxt.getText(), famTxt.getText(), groupTxt.getText(), 
+					ball_1Txt.getText(), ball_2Txt.getText(), ball_3Txt.getText(), 
+					ball_4Txt.getText(), ball_5Txt.getText());
 
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
@@ -119,7 +124,10 @@ public class newStudent extends JPanel{
 				} else {
 					JOptionPane.showMessageDialog(p1, "Данные введены неверно");		 
 				}
-		}});
+		}
+
+			private void toString(JTextField srBallTxt) {
+			}});
 
 		// Запись в файл
 		saveButton.addActionListener(new ActionListener()

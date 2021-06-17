@@ -16,7 +16,6 @@ public class ListStudent extends JPanel{
 
 	// Объявление массива с людьми
 	ArrayList <Student> stud = new ArrayList<Student>();
-
 	public ListStudent() throws IOException
 	{
 		super();
@@ -24,7 +23,7 @@ public class ListStudent extends JPanel{
 		try {
 			stud = getStudent(); // Получаем данные из базы
 			//Student.groupDate(stud); // Группируем их по дате
-			System.out.println("Получение данных из базы - успешно!");
+			System.out.println("Получение данных из базы - успешно!");	
 		} catch (IOException e) {
 			System.out.println("list "+ e.getMessage());
 			System.out.println("Получение данных из базы - ошибка!");
@@ -38,7 +37,7 @@ public class ListStudent extends JPanel{
 		// Объявление модели таблицы
 		DefaultTableModel tableModel = new DefaultTableModel();
 		tableModel.setColumnIdentifiers(columnsHeader); // Добавление "шапки" на таблицу
-		
+
 		// Цикл, в котором добавляются строки с данными в таблицу
 		for (int i = 0; i < stud.size(); i++)
 		{
@@ -51,8 +50,8 @@ public class ListStudent extends JPanel{
 		}
 		
 		JTable tab = new JTable(tableModel); // Объявление таблицы
-		Box contents = new Box(BoxLayout.Y_AXIS);
-
+		Box contents = new Box(BoxLayout.Y_AXIS);	 
+		
 		// Добавление "ползунка" на таблицу (его не видно, если вся таблица убирается в окне)
 		contents.add(new JScrollPane(tab));
 		this.add(contents);
