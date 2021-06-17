@@ -3,7 +3,6 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.io.IOException;
 
-//Status: +
 
 public class win extends JFrame {
 	    private static final long serialVersionUID = 1L; // Это для записи в файл
@@ -16,12 +15,14 @@ public class win extends JFrame {
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
 	        JMenuItem item2 = new JMenuItem("Поиск по среднему баллу");
 	        JMenuItem item3 = new JMenuItem("База данных");
+			
 
 			// Добавление пунктов на меню
 	        menu.add(item1); 
 	        menu.add(item2);
 	        menu.add(item3);
-	        
+
+
             // Первый пункт, который ссылается на функцию добавления нового человека
 	        item1.addActionListener(new ActionListener()
             {
