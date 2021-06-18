@@ -31,7 +31,8 @@ public class searchBall extends JPanel {
 		setLayout(new FlowLayout());
 		
 		// Создаём шапку для таблицы
-		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Средний балл"};
+		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Оценка 1", "Оценка 2", 
+		"Оценка 3", "Оценка 4", "Оценка 5"};
 
 		DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
 		tableModel.setColumnIdentifiers(columnsHeader);
@@ -43,7 +44,9 @@ public class searchBall extends JPanel {
 			if (stud.get(i).ball[0].equals("2") || stud.get(i).ball[1].equals("2") || stud.get(i).ball[2].equals("2") || 
 				stud.get(i).ball[3].equals("2") || stud.get(i).ball[4].equals("2"))
 			{
-				Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).srBall};
+				Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
+					stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
+					stud.get(i).ball[4]};
 				tableModel.addRow(ab);
 				alive++;
 			}
