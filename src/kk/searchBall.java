@@ -40,7 +40,9 @@ public class searchBall extends JPanel {
 
 		//Цикл выводит всех i-тых студентов
 		for (int i = 0; i < stud.size(); i++) {
-			if (stud.get(i).srBall.equals(ball)) {
+			if (stud.get(i).ball[0].equals("2") || stud.get(i).ball[1].equals("2") || stud.get(i).ball[2].equals("2") || 
+				stud.get(i).ball[3].equals("2") || stud.get(i).ball[4].equals("2"))
+			{
 				Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).srBall};
 				tableModel.addRow(ab);
 				alive++;
