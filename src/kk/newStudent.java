@@ -68,8 +68,8 @@ public class newStudent extends JPanel{
 		// Расположение BoxLayout по оси Y
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		// Объявление панелей
-		JPanel p1=new JPanel();
-		JPanel p2=new JPanel();
+		JPanel p1 = new JPanel();
+		JPanel p2 = new JPanel();
 		// Расположение элементов на этих панелях
 		p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 		p2.setLayout(new BoxLayout(p2, BoxLayout.X_AXIS));

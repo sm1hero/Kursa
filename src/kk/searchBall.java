@@ -48,7 +48,7 @@ public class searchBall extends JPanel {
 		} 
 
 		if (alive == 0){
-			JOptionPane.showMessageDialog("Данные введены неверно");
+			JOptionPane.showMessageDialog(new JPanel(),"Данные введены неверно");
 		}
 
 		JTable tab = new JTable(tableModel); 		// Объявление таблицы
