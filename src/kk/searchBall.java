@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 
 //Status: -+
 
-public class searchBall extends JPanel{
+public class searchBall extends JPanel {
 
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
@@ -19,8 +19,7 @@ public class searchBall extends JPanel{
 	
 	// Функция нахождения человека по среднему баллу.
 
-	public searchBall (String ball) throws IOException
-	{
+	public searchBall (String ball) throws IOException {
 		super();
 
 		try {
@@ -36,9 +35,11 @@ public class searchBall extends JPanel{
 
 		DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
 		tableModel.setColumnIdentifiers(columnsHeader);
-		for (int i = 0; i < stud.size(); i++)
-		{
-			if (stud.get(i).getsrBall().equals(ball)) {
+
+
+		//Цикл выводит всех i-тых студентов
+		for (int i = 0; i < stud.size(); i++) {
+			if (stud.get(i).srBall.equals(ball)) {
 				Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).srBall};
 				tableModel.addRow(ab);
 			}

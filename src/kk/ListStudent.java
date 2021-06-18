@@ -32,7 +32,8 @@ public class ListStudent extends JPanel{
 		setLayout(new FlowLayout()); // Расположение FlowLayout
 
 		// Создание "шапки" таблицы
-		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Оценка 1", "Оценка 2", "Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
+		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Оценка 1", "Оценка 2", 
+		"Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
 
 		// Объявление модели таблицы
 		DefaultTableModel tableModel = new DefaultTableModel();

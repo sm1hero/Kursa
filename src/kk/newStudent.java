@@ -25,13 +25,6 @@ public class newStudent extends JPanel{
 	// Массив для данных
 	public ArrayList <Student> stud = new ArrayList<Student>();
 
-	float srBall1 = 0;
-	float a = 0;
-	float b = 0;
-	float c = 0;
-	float d = 0;
-	float e = 0;
-
 	// Ниже так называемые "метки", просто текст и поле ввода
 	//JLabel idLab = new JLabel("Номер");
 	//JTextField idTxt = new JTextField(20); 
@@ -119,24 +112,11 @@ public class newStudent extends JPanel{
 					// Если эти данные соответствуют шаблонам в функции check_abitur(),
 					// то добавляются в оперативку.
 					
-					//Подсчёт среднего балла
-					String ball1 = ball_1Txt.getText();
-					a = Float.parseFloat(ball1);
-					String ball2 = ball_2Txt.getText();
-					b = Float.parseFloat(ball2);
-					String ball3 = ball_3Txt.getText();
-					c = Float.parseFloat(ball3);
-					String ball4 = ball_4Txt.getText();
-					d = Float.parseFloat(ball4);
-					String ball5 = ball_5Txt.getText();
-					e = Float.parseFloat(ball5);
-					srBall1=(a+b+c+d+e)/5;
-					srBall.setText(Float.toString(srBall1));
-
+					
 					// Сначала "создается" человек ab с данными
 					Student ab = new Student(namTxt.getText(), famTxt.getText(), groupTxt.getText(), 
 					ball_1Txt.getText(), ball_2Txt.getText(), ball_3Txt.getText(), 
-					ball_4Txt.getText(), ball_5Txt.getText(), srBall.getText());
+					ball_4Txt.getText(), ball_5Txt.getText());
 
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
