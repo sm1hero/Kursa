@@ -24,7 +24,7 @@ public class ListStudent extends JPanel{
 			stud = getStudent(); // Получаем данные из базы
 			Collections.sort(stud, new Comparator<Student>() {
 				public int compare(Student o1, Student o2) {
-					return o1.group.compareTo(o2.group);
+					return o1.surname.compareTo(o2.surname);
 				}
 			});
 			System.out.println("Получение данных из базы - успешно!");	
@@ -37,7 +37,7 @@ public class ListStudent extends JPanel{
 
 		// Создание "шапки" таблицы
 		Object columnsHeader[] = new String[] {"Имя", "Фамилия", "Группа", "Оценка 1", "Оценка 2", 
-		"Оценка 3", "Оценка 4", "Оценка 5", "Средний балл"};
+		"Оценка 3", "Оценка 4", "Оценка 5"};
 
 		// Объявление модели таблицы
 		DefaultTableModel tableModel = new DefaultTableModel();
@@ -49,7 +49,7 @@ public class ListStudent extends JPanel{
 			// Создание строки типа Object[]
 			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1],stud.get(i).ball[2], stud.get(i).ball[3],
-				stud.get(i).ball[4], stud.get(i).srBall};
+				stud.get(i).ball[4]};
 
 			tableModel.addRow(ab); // Добавление строки
 		}
