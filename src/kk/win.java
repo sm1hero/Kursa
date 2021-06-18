@@ -15,7 +15,8 @@ public class win extends JFrame {
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
 			JMenuItem item2 = new JMenuItem("Список студентов");
 	        JMenuItem item3 = new JMenuItem("Поиск по среднему баллу");
-			JMenuItem item4 = new JMenuItem("Удаление");
+			JMenuItem item4 = new JMenuItem("Сортировка по номеру группы");
+			JMenuItem item5 = new JMenuItem("Удаление");
 	        
 			
 
@@ -24,6 +25,8 @@ public class win extends JFrame {
 	        menu.add(item2);
 	        menu.add(item3);
 			menu.add(item4);
+			menu.add(item5);
+
 
             // Первый пункт, который ссылается на функцию добавления нового человека
 	        item1.addActionListener(new ActionListener()
@@ -68,8 +71,25 @@ public class win extends JFrame {
 				}
 			});
 
-			// Третий - Удаление
+			// Второй пункт, ссылающийся на сортировку по дате
 	        item4.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent arg0)  {
+                    try{
+						// Как в первом, при нажатии вызывается функция, которая
+						// в файле listZ
+                    	setContentPane(new ListStudent());
+                    	validate();
+                    }
+                    catch (IOException e) {System.out.println(e.getMessage());}
+                    }
+                    
+                    
+                });
+
+			// Третий - Удаление
+	        item5.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent arg0)  {
