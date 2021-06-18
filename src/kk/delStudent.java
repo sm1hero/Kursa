@@ -87,6 +87,12 @@ public class delStudent extends JPanel{
 
 		try {
 			stud = getStudent(); 	// Получение людей из фалйа	
+			
+			Collections.sort(stud, new Comparator<Student>() {
+				public int compare(Student o1, Student o2) {
+					return o1.group.compareTo(o2.group);
+				}
+			});
 		} catch (IOException e) {
 			System.out.println(e.getMessage()); 
 		}

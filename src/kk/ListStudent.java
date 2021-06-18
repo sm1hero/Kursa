@@ -22,7 +22,11 @@ public class ListStudent extends JPanel{
 
 		try {
 			stud = getStudent(); // Получаем данные из базы
-			//Student.groupDate(stud); // Группируем их по дате
+			Collections.sort(stud, new Comparator<Student>() {
+				public int compare(Student o1, Student o2) {
+					return o1.group.compareTo(o2.group);
+				}
+			});
 			System.out.println("Получение данных из базы - успешно!");	
 		} catch (IOException e) {
 			System.out.println("list "+ e.getMessage());
