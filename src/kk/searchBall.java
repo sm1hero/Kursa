@@ -36,14 +36,20 @@ public class searchBall extends JPanel {
 		DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
 		tableModel.setColumnIdentifiers(columnsHeader);
 
+		int alive = 0;
 
 		//Цикл выводит всех i-тых студентов
 		for (int i = 0; i < stud.size(); i++) {
 			if (stud.get(i).srBall.equals(ball)) {
 				Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).srBall};
 				tableModel.addRow(ab);
+				alive++;
 			}
 		} 
+
+		if (alive == 0){
+			JOptionPane.showMessageDialog("Данные введены неверно");
+		}
 
 		JTable tab = new JTable(tableModel); 		// Объявление таблицы
 		Box contents = new Box(BoxLayout.Y_AXIS);

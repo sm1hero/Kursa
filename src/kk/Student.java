@@ -62,10 +62,6 @@ public class Student implements Serializable{
 		System.out.println("________________________");
 	}
 
-	public Object getsrBall(){
-		return srBall;
-	}
-	
 	//Подсчёт среднего балла
     public String getsrBall(String[] ball) {
 
