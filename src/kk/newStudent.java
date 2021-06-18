@@ -184,6 +184,15 @@ public class newStudent extends JPanel{
 		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find()){ 
 			return false;
 		}
+
+
+		if(Integer.parseInt(ball_1Txt.getText() <2 || Integer.parseInt(ball_1Txt.getText()) > 5
+		   Integer.parseInt(ball_2Txt.getText() < 2) || Integer.parseInt(ball_2Txt.getText()) > 5
+		   Integer.parseInt(ball_3Txt.getText() < 2) || Integer.parseInt(ball_3Txt.getText()) > 5
+		   Integer.parseInt(ball_4Txt.getText() < 2) || Integer.parseInt(ball_4Txt.getText()) > 5
+		   Integer.parseInt(ball_5Txt.getText() < 2) || (Integer.parseInt(ball_5Txt.getText()) > 5){
+
+		   }
 		
 	return true;
 	}
