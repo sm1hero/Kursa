@@ -9,12 +9,10 @@ import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 
-// Это функции для вывода данных (3 пункт меню)
-
 // Класс delStudent наследуется от класса JPanel
 public class delStudent extends JPanel{
 
-	// Объявление массива людей
+	// Объявление массива cтудентов
 	ArrayList <Student> stud = new ArrayList<Student>();	
 
 	DefaultTableModel tableModel = new DefaultTableModel(); // Объявление модели таблицы
@@ -27,7 +25,7 @@ public class delStudent extends JPanel{
 		
 		JButton delButton = new JButton("Удалить"); // Объявление кнопки удаления строки
 		this.add(delButton); 						// Добавление этой кнопки на форму
-		showTable(); 								// её функция показа таблицы
+		showTable(); 								
 		
 			delButton.addActionListener(new ActionListener() {
 
@@ -58,10 +56,10 @@ public class delStudent extends JPanel{
 		);
 		
 	}
-	// Функция получения людей, как и в других файлах
+	// Функция получения студентов, как и в других файлах
 	public ArrayList <Student> getStudent() throws IOException
 	{
-		ArrayList <Student> students = new ArrayList<Student>(); // Объявление массива для людей
+		ArrayList <Student> students = new ArrayList<Student>(); // Объявление массива для студентов
 
 		// Открывание потока чтения из файла
 		try (FileInputStream fis=new FileInputStream("student.txt");) {
@@ -86,7 +84,7 @@ public class delStudent extends JPanel{
 	
 
 		try {
-			stud = getStudent(); 	// Получение людей из фалйа	
+			stud = getStudent(); 	// Получение студентов из фалйа	
 			
 			Collections.sort(stud, new Comparator<Student>() {
 				public int compare(Student o1, Student o2) {
@@ -104,7 +102,7 @@ public class delStudent extends JPanel{
 		tableModel.setColumnIdentifiers(columnsHeader);
 
 		for (int i = 0; i < stud.size(); i++) {
-			// Строка с данными о человеке с индексом цикла i
+			// Строка с данными о студенте с индексом цикла i
 			Object[] ab = new String[]{stud.get(i).name, stud.get(i).surname, stud.get(i).group, stud.get(i).ball[0],
 				stud.get(i).ball[1], stud.get(i).ball[2], stud.get(i).ball[3],
 				stud.get(i).ball[4]};

@@ -14,7 +14,7 @@ public class searchBall extends JPanel {
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
 	
-	// Массив с людьми
+	// Массив со студентами
 	ArrayList <Student> stud = new ArrayList<Student>();	
 	
 	// Функция нахождения студента с оценкой 2.
@@ -23,7 +23,7 @@ public class searchBall extends JPanel {
 		super();
 
 		try {
-			stud = getStudent(); // Получаем данные о людях
+			stud = getStudent(); // Получаем данные о студентах
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}

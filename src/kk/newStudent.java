@@ -24,9 +24,6 @@ public class newStudent extends JPanel{
 	// Массив для данных
 	public ArrayList <Student> stud = new ArrayList<Student>();
 
-	// Ниже так называемые "метки", просто текст и поле ввода
-	//JLabel idLab = new JLabel("Номер");
-	//JTextField idTxt = new JTextField(20); 
 
 	JLabel namLab = new JLabel("Имя");
 	JTextField namTxt = new JTextField(20); 
@@ -52,7 +49,7 @@ public class newStudent extends JPanel{
 	JLabel ball_5Lab = new JLabel("Оценка 5");
 	JTextField ball_5Txt = new JTextField(1); 
 
-	// Две кнопки, Add, чтобы добавить введённого человека в оперативную память,
+	// Две кнопки, Add, чтобы добавить введённого студента в оперативную память,
 	// Save - чтобы сохранить данные из оперативной памяти в файл
     JButton addButton  = new JButton("Добавить");
     JButton saveButton = new JButton("Сохранить");
@@ -71,8 +68,6 @@ public class newStudent extends JPanel{
 		p1.setLayout(new BoxLayout(p1, BoxLayout.Y_AXIS));
 		p2.setLayout(new BoxLayout(p2, BoxLayout.X_AXIS));
 		// На первую панель добавляются все метки и поля вводы
-		//p1.add(idLab);
-		//p1.add(idTxt);
 		p1.add(namLab);
 		p1.add(namTxt);
 		p1.add(famLab);
@@ -117,7 +112,7 @@ public class newStudent extends JPanel{
 
 					stud.add(ab); // Затем его добавляют в массив
 					System.out.println(ab); // Проверяем массив после записи
-					clearForm(); // После добавления этого человека форма очищает,то что мы ввели
+					clearForm(); // После добавления этого студента форма очищает,то что мы ввели
 				} else {
 					JOptionPane.showMessageDialog(p1, "Данные введены неверно");		 
 				}
@@ -176,7 +171,6 @@ public class newStudent extends JPanel{
 		Matcher matcher6 = pattern.matcher(ball_3Txt.getText());
 		Matcher matcher7 = pattern.matcher(ball_4Txt.getText());
 		Matcher matcher8 = pattern.matcher(ball_5Txt.getText());
-		//Matcher matcher9 = pattern.matcher(idTxt.getText());
 
 		if (!matcher4.find() || !matcher5.find() || !matcher6.find() || !matcher7.find() || !matcher8.find()){ 
 			return false;

@@ -14,7 +14,7 @@ public class ListStudent extends JPanel{
 	// Для записи и чтения из файла
 	private static final long serialVersionUID = 1L;
 
-	// Объявление массива с людьми
+	// Объявление массива со студентами
 	ArrayList <Student> stud = new ArrayList<Student>();
 	public ListStudent() throws IOException
 	{

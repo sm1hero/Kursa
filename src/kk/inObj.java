@@ -18,7 +18,7 @@ public class inObj  {
 
 		File file = new File("student.txt"); // Объявление файла
 
-		if (!file.isFile()) { // Если fil это не файл
+		if (!file.isFile()) { // Если нет файла student.txt, то создать его
 			file.createNewFile();
 		}
 
@@ -30,7 +30,7 @@ public class inObj  {
 				// Открывается поток для чтения объектов
 				ObjectInputStream ois = new ObjectInputStream(fis);
 
-				// В массив stud считываются объекты
+				// В массив student_list считываются объекты
 				student_list = (ArrayList <Student>) ois.readObject();
 
 				// Закрывается поток чтения объектов
