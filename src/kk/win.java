@@ -14,7 +14,7 @@ public class win extends JFrame {
 			// Объявление переменных-пунктов меню
 	        JMenuItem item1 = new JMenuItem("Добавить запись");
 			JMenuItem item2 = new JMenuItem("Список студентов");
-	        JMenuItem item3 = new JMenuItem("Поиск по среднему баллу");
+	        JMenuItem item3 = new JMenuItem("Вывод студентов с оценкой 2");
 			JMenuItem item4 = new JMenuItem("Удаление");
 	        
 			
@@ -55,7 +55,7 @@ public class win extends JFrame {
                     }
             	});
 			
-			// Третий пункт - функция отображения информации при выборе балла
+			// Третий пункт - вывод студентов с оценкой 2
 	        item3.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {       

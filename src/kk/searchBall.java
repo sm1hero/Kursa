@@ -17,7 +17,7 @@ public class searchBall extends JPanel {
 	// Массив с людьми
 	ArrayList <Student> stud = new ArrayList<Student>();	
 	
-	// Функция нахождения человека по среднему баллу.
+	// Функция нахождения студента с оценкой 2.
 
 	public searchBall () throws IOException {
 		super();
@@ -62,7 +62,7 @@ public class searchBall extends JPanel {
 		this.add(contents);
 	}
 
-	// Функция получения "людей" из файла
+	// Функция получения списка студентов из файла
 	public ArrayList <Student> getStudent() throws IOException {
 		ArrayList <Student> student_list = new ArrayList<Student>();
 
