@@ -40,28 +40,6 @@ public class Student implements Serializable{
 		this.srBall = getsrBall(ball);
 	}
 
-	// Эта функция для вывода данных в консоль. Она нужна только на стадии отладки программы.
-	// Она просто выводит данные
-	public void showPersonData()
-	{
-		if (!surname.isEmpty() && !name.isEmpty() && !group.isEmpty()) {
-			System.out.println("Фамилия: " + surname);
-			System.out.println("Имя: \t" + name);
-			System.out.println("Группа: \t" + group);
-		} else {
-			System.out.println("error!");
-		}
-		
-		for (int i = 0; i < 5; i++) {
-			if ((Integer.parseInt(ball[i]) < 2) || (Integer.parseInt(ball[i]) > 5)){
-				System.out.println("error! в оценке" + i);
-			} else {
-				System.out.println("Балл по дисциплине " + (i + 1) + " " + ball[i]);
-			}
-		}
-		System.out.println("________________________");
-	}
-
 	//Подсчёт среднего балла
     public String getsrBall(String[] ball) {
 
