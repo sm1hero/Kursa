@@ -4,7 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JPanel;
-import javax.swing.JTextArea;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -52,8 +51,6 @@ public class newStudent extends JPanel{
 
 	JLabel ball_5Lab = new JLabel("Оценка 5");
 	JTextField ball_5Txt = new JTextField(1); 
-
-	JTextField srBall = new JTextField(1); 
 
 	// Две кнопки, Add, чтобы добавить введённого человека в оперативную память,
 	// Save - чтобы сохранить данные из оперативной памяти в файл

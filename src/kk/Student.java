@@ -14,7 +14,6 @@ public class Student implements Serializable{
 	String name    = "";
 	String group   = "";
 	String[] ball  = new String[5];
-	String srBall  = "";
 
 	// Метод Student - конструктор
 	// Они нужны, чтобы в программе ты смог задать переменную класса (можно назвать экземпляр)
@@ -36,34 +35,6 @@ public class Student implements Serializable{
 		this.ball[2] = ball_3;
 		this.ball[3] = ball_4;
 		this.ball[4] = ball_5;
-
-		this.srBall = getsrBall(ball);
 	}
 
-	//Подсчёт среднего балла
-    public String getsrBall(String[] ball) {
-
-		float srBall = 0;
-		String srBall_str;
-		float a = 0;
-		float b = 0;
-		float c = 0;
-		float d = 0;
-		float e = 0;
-
-		String ball1 = ball[0];
-		a = Float.parseFloat(ball1);
-		String ball2 = ball[1];
-		b = Float.parseFloat(ball2);
-		String ball3 = ball[2];
-		c = Float.parseFloat(ball3);
-		String ball4 = ball[3];
-		d = Float.parseFloat(ball4);
-		String ball5 = ball[4];
-		e = Float.parseFloat(ball5);
-		srBall = ( a + b + c + d + e) / 5;
-		srBall_str = Float.toString(srBall);
-		
-        return srBall_str;
-    }
 }
