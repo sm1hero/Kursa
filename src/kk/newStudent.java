@@ -186,12 +186,13 @@ public class newStudent extends JPanel{
 		}
 
 
-		if(Integer.parseInt(ball_1Txt.getText() < 2  ||  Integer.parseInt(ball_1Txt.getText()) > 5
-		   Integer.parseInt(ball_2Txt.getText() < 2) || Integer.parseInt(ball_2Txt.getText()) > 5
-		   Integer.parseInt(ball_3Txt.getText() < 2) || Integer.parseInt(ball_3Txt.getText()) > 5
-		   Integer.parseInt(ball_4Txt.getText() < 2) || Integer.parseInt(ball_4Txt.getText()) > 5
-		   Integer.parseInt(ball_5Txt.getText() < 2) || Integer.parseInt(ball_5Txt.getText()) > 5){
-
+		if ((Integer.parseInt(ball_1Txt.getText()) < 2)  || (Integer.parseInt(ball_1Txt.getText()) > 5)  ||
+		   (Integer.parseInt(ball_2Txt.getText()) < 2)   || (Integer.parseInt(ball_2Txt.getText()) > 5)  ||
+		   (Integer.parseInt(ball_3Txt.getText()) < 2)   || (Integer.parseInt(ball_3Txt.getText()) > 5)  ||
+		   (Integer.parseInt(ball_4Txt.getText()) < 2)   || (Integer.parseInt(ball_4Txt.getText()) > 5)  ||
+		   (Integer.parseInt(ball_5Txt.getText()) < 2)   || (Integer.parseInt(ball_5Txt.getText()) > 5))
+		   {
+				return false;
 		   }
 		
 	return true;
