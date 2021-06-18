@@ -19,7 +19,7 @@ public class searchBall extends JPanel {
 	
 	// Функция нахождения человека по среднему баллу.
 
-	public searchBall (String ball) throws IOException {
+	public searchBall () throws IOException {
 		super();
 
 		try {

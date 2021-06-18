@@ -60,9 +60,7 @@ public class win extends JFrame {
                 @Override
                 public void actionPerformed(ActionEvent arg0) {       
 					try {
-						searchWin dialog = new searchWin(win.this);	
-						dialog.setVisible(true);
-					setContentPane(new searchBall(dialog.getSearch()));
+					setContentPane(new searchBall());
 					validate();
 					}
 					catch (IOException e) {}
